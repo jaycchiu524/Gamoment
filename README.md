@@ -1,2 +1,2 @@
-# YelpcCamp
+# YelpCamp
 Sign Up and share your favourite campsite to everyone!
