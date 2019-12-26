@@ -1,54 +1,54 @@
-body {
-  background-color: #000; }
-
-#landing-header {
-  /* x: left & right
-    y: up & down
-    z: forward & backward*/
-  z-index: 1;
-  position: relative;
+@import url("https://fonts.googleapis.com/css?family=Monoton|Montserrat&display=swap");
+header {
   text-align: center;
-  padding-top: 40vh; }
-  #landing-header h1 {
-    color: #fff; }
-
-.slideshow {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  /* remove bullet point */
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  .slideshow li {
+  border-bottom: 2px #000 solid;
+  padding-bottom: 20px;
+  min-height: calc(100vh - 70px);
+  padding-top: 30vh; }
+  header .header-box {
+    background: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 2vw; }
+    header .header-box h1 {
+      font-family: 'Monoton', cursive;
+      font-size: 5rem; }
+  header .slideshow {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
     left: 0;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 50s linear infinite; }
-    .slideshow li:nth-child(1) {
-      background-image: url(http://i.imgur.com/K3mPv14.jpg); }
-    .slideshow li:nth-child(2) {
-      background-image: url(http://i.imgur.com/SBEmFpv.jpg);
-      animation-delay: 10s; }
-    .slideshow li:nth-child(3) {
-      background-image: url(http://i.imgur.com/emvhOnb.jpg);
-      animation-delay: 20s; }
-    .slideshow li:nth-child(4) {
-      background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
-      animation-delay: 30s; }
-    .slideshow li:nth-child(5) {
-      background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
-      animation-delay: 40s; }
+    z-index: -1;
+    /* remove bullet point */
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    header .slideshow li {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      z-index: 0;
+      animation: imageAnimation 50s linear infinite; }
+      header .slideshow li:nth-child(1) {
+        background-image: url(../images/slide-1.jpg); }
+      header .slideshow li:nth-child(2) {
+        background-image: url(../images/slide-2.jpg);
+        animation-delay: 10s; }
+      header .slideshow li:nth-child(3) {
+        background-image: url(../images/slide-3.jpg);
+        animation-delay: 20s; }
+      header .slideshow li:nth-child(4) {
+        background-image: url(../images/slide-4.jpg);
+        animation-delay: 30s; }
+      header .slideshow li:nth-child(5) {
+        background-image: url(../images/slide-5.jpg);
+        animation-delay: 40s; }
 
 @keyframes imageAnimation {
   0% {
@@ -67,9 +67,11 @@ body {
   opacity: 1; }
 
 body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   padding: 0;
   box-sizing: border-box;
-  background-color: beige; }
+  background-color: #fff; }
 
 .thumbnail img {
   width: 100%; }

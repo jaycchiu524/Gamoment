@@ -60,5 +60,5 @@ app.use('/campgrounds/:id/comments/', commentsRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("Yelp Camp is listening on PORT 3000");
+    console.log("GaMoment is listening on PORT 3000");
 })

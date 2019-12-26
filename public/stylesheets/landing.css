@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton|Montserrat&display=swap");
 body {
   background-color: #000; }
 
@@ -6,11 +7,19 @@ body {
     y: up & down
     z: forward & backward*/
   z-index: 1;
+  display: flexbox;
   position: relative;
   text-align: center;
-  padding-top: 40vh; }
+  padding-top: 40vh;
+  color: #fff; }
   #landing-header h1 {
-    color: #fff; }
+    background: rgba(255, 255, 255, 0.3);
+    font-family: 'Monoton', cursive;
+    font-size: 5rem; }
+  #landing-header p {
+    background: rgba(255, 255, 255, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em; }
 
 .slideshow {
   position: fixed;
