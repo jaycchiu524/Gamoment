@@ -10,7 +10,6 @@ const express    = require('express');
       LocalStrategy = require('passport-local');
       medthodOverride = require('method-override');
       flash           = require('connect-flash');
-      port            = process.env.PORT || 3000;
 
 // Requiring ROUTES
 const commentsRoutes = require('./routes/comments');
@@ -60,6 +59,6 @@ app.use('/campgrounds', campgroundsRoutes);
 app.use('/campgrounds/:id/comments/', commentsRoutes);
 
 
-app.listen(port, () => {
-    console.log("Yelp Camp is listening on PORT 8000");
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Yelp Camp is listening on PORT 3000");
 })

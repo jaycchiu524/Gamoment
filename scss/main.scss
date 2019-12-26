@@ -1,0 +1,19 @@
+@import 'landing';
+
+body {
+    padding: 0;
+    box-sizing: border-box;
+    background-color: beige;
+}
+
+.thumbnail img{
+    width: 100%;
+}
+
+.thumbnail{
+    padding: 0;
+}
+
+.deletebutton, .editbutton{
+    display: inline;
+}

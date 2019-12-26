@@ -4,7 +4,7 @@
   "description": "YelpCamp v1",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w scss/ -o public/stylesheets --recursive",
     "start": "node app.js"
   },
   "author": "Jay Chiu",
@@ -20,5 +20,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
   }
 }
