@@ -6,7 +6,7 @@ const express = require('express');
 
 //HOME Routes
 router.get("/", (req, res) => {
-    res.render('landing');
+    res.redirect("/campgrounds");
 })
 
 // ==================

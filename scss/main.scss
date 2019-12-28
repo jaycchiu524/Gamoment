@@ -1,6 +1,12 @@
 @import 'config';
 @import url('https://fonts.googleapis.com/css?family=Monoton|Montserrat&display=swap');
 
+a,
+a:hover {
+    color: black;
+    text-decoration: none; /* no underline */
+}
+
 header {
     text-align: center;
     border-bottom: 2px #000 solid;
@@ -19,8 +25,6 @@ header {
             
         }
     }
-
-    
 
     .slideshow { 
         position: absolute;
@@ -46,26 +50,32 @@ header {
                 opacity: 0;
                 z-index: 0;
                 animation: imageAnimation 50s linear infinite; 
-    
-                &:nth-child(1) { 
-                    background-image: url(../images/slide-1.jpg);
-                }
-                &:nth-child(2) { 
-                    background-image: url(../images/slide-2.jpg);
-                    animation-delay: 10s; 
-                }
-                &:nth-child(3) { 
-                    background-image: url(../images/slide-3.jpg);
-                    animation-delay: 20s; 
-                }
-                &:nth-child(4) { 
-                    background-image: url(../images/slide-4.jpg);
-                    animation-delay: 30s; 
-                }
-                &:nth-child(5) { 
-                    background-image: url(../images/slide-5.jpg);
-                    animation-delay: 40s; 
-                }
+                
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) { 
+                        background-image: url(../images/slide-#{$i}.jpg); 
+                        animation-delay: 10s * $i;
+                    }
+                  }
+                // &:nth-child(1) { 
+                //     background-image: url(../images/slide-1.jpg);
+                // }
+                // &:nth-child(2) { 
+                //     background-image: url(../images/slide-2.jpg);
+                //     animation-delay: 10s; 
+                // }
+                // &:nth-child(3) { 
+                //     background-image: url(../images/slide-3.jpg);
+                //     animation-delay: 20s; 
+                // }
+                // &:nth-child(4) { 
+                //     background-image: url(../images/slide-4.jpg);
+                //     animation-delay: 30s; 
+                // }
+                // &:nth-child(5) { 
+                //     background-image: url(../images/slide-5.jpg);
+                //     animation-delay: 40s; 
+                // }
             }    
     
     
@@ -99,14 +109,36 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #fff;
-}
 
-.thumbnail img{
-    width: 100%;
-}
+    .navbar-default {
+        background: rgba(#f8f8f8, .7);
+    }
 
-.thumbnail{
-    padding: 0;
+    main{
+        padding: 35px;
+        &#showroom {
+            min-height: 100vh;
+
+            .card-img-top {
+                width: 100%;
+                height: 15vw;
+                object-fit: cover;
+            }
+            
+            .card-title {
+                font-weight: 600;
+            }
+
+            .card-text {
+                overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            }
+
+        }
+    }
 }
 
 .deletebutton, .editbutton{
