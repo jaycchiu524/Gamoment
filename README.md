@@ -1,2 +1,2 @@
-# YelpCamp
-Sign Up and share your favourite campsite to everyone!
+# GaMoment
+Share your wonderful gaming moments to the world!
