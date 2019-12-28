@@ -1,28 +1,46 @@
 <% include ../partials/header %>
-
+<main id="new">
+    <h1 style="text-align: center;">Create a New GaMoment</h1>
     <div class="row">
-        <h1 style="text-align: center;">Create a New Campground</h1>
-        <div style="width: 30%; margin: 25px auto">
+        <div class="input-form">
             <form action="/campgrounds" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="campgrounds" name="name">
+                    <input class="form-control" type="text" placeholder="Game" name="name">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="number" placeholder="price in HKD" name="price" min="0.01" step="0.01">
+                    <!-- <input class="form-control" type="number" placeholder="price in HKD" name="price" min="0.01" step="0.01"> -->
+                    <select class="custom-select">
+                        <option selected>Genre</option>
+                        <option value="1">RPG</option>
+                        <option value="2">FPS</option>
+                        <option value="3">RTS</option>
+                        <option value="4">MOBA</option>
+                        <option value="3">MMORPG</option>
+                      </select>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" placeholder="image url" name="image">
                 </div>
+                <!-- <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div> -->
+                <!-- <script>
+                    // Add the following code if you want the name of the file appear on select
+                    $(".custom-file-input").on("change", function() {
+                      var fileName = $(this).val().split("\\").pop();
+                      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                    });
+                </script> -->
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="description if any" name="description">
+                    <textarea class="form-control" type="text" placeholder="Write your moment!" name="description"></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit</button>
                 </div>
             </form>
             <a href="/">Home</a>
-        </div>
-        
+        </div>  
     </div>
-
+</main>
 <% include ../partials/footer %>

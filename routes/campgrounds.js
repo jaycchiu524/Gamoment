@@ -51,7 +51,7 @@ router.post("/", (req, res) => {
         }
         console.log(newlyCreated);
         //redirect to /campgrounds
-        req.flash('success', 'Successfully Added A Campground');
+        req.flash('success', 'Successfully Added A GaMoment');
         res.redirect("/campgrounds");
     })
 })
@@ -103,7 +103,7 @@ router.delete('/:id', middleware.checkCampgroundOwnership, (req, res) => {
         }else{
             req.campground.deleteOne((err) => {
                 if(err){
-                    req.flash('error', 'Oops, Somthing Went Wrong');
+                    req.flash('error', 'You Deleted A GaMoment');
                     return res.redirect('/');
                 }
                 req.flash('error', 'Campground deleted!');

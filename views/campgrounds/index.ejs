@@ -18,9 +18,11 @@
     <main id="showroom">
         <div class="d-flex justify-content-between">
             <h3>Best Moments</h3>
+            <% if(currentUser){%>
             <div class="p-1 bd-highlight">
                 <a class="btn btn-sm btn-info" href="/campgrounds/new">Add New Moment</a>
             </div>
+            <% } %>
         </div>
 
         <div class="card-columns">
