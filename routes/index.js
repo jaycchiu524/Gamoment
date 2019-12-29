@@ -6,7 +6,7 @@ const express = require('express');
 
 //HOME Routes
 router.get("/", (req, res) => {
-    res.redirect("/campgrounds");
+    res.redirect("/moments");
 })
 
 // ==================
@@ -29,7 +29,7 @@ router.post("/register", (req, res) => {
         }
         passport.authenticate('local')(req, res, () => {
             req.flash('success', `Welcome to Yelp Camp, ${user.username}`);
-            res.redirect("/campgrounds");
+            res.redirect("/moments");
         });
         
     })
@@ -46,7 +46,7 @@ router.get("/login", (req, res) => {
 
 //HANDLING login logic
 router.post("/login", passport.authenticate('local',{
-    successRedirect: "/campgrounds",
+    successRedirect: "/moments",
     failureRedirect: "/login"
 }),(req, res) => {  
     
@@ -56,7 +56,7 @@ router.post("/login", passport.authenticate('local',{
 router.get("/logout", (req, res) => {
     req.logout();
     req.flash('success', 'You have logged out!');
-    res.redirect("/campgrounds");
+    res.redirect("/moments");
 })
 
 module.exports = router;

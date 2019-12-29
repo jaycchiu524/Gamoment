@@ -20,7 +20,7 @@
             <h3>Best Moments</h3>
             <% if(currentUser){%>
             <div class="p-1 bd-highlight">
-                <a class="btn btn-sm btn-info" href="/campgrounds/new">Add New Moment</a>
+                <a class="btn btn-sm btn-info" href="/moments/new">Add New Moment</a>
             </div>
             <% } %>
         </div>
@@ -39,7 +39,7 @@
 
             <% campgrounds.forEach((campground) => {%>
                 <div class="card">
-                    <a href="/campgrounds/<%= campground._id %>">
+                    <a href="/moments/<%= campground._id %>">
                         <img src="<%= campground.image %>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><%= campground.name %></h5>
@@ -60,7 +60,7 @@
                         <div class="caption">
                             <h4><%= campground.name %></h4>
                         </div>
-                        <p><a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a></p>
+                        <p><a href="/moments/<%= campground._id %>" class="btn btn-primary">More Info</a></p>
                     </div>                
                 </div> 
             <% }) %>    

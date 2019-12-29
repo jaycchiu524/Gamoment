@@ -24,7 +24,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
         Campground.findById(req.params.id, (err, foundCampground) => {
             if(err || !foundCampground){
                 console.log(err);
-                req.flash('error', 'Campground Not Found');
+                req.flash('error', 'Moment Not Found');
                 res.redirect('back');
             }
             
@@ -63,7 +63,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
             }
         });
     }else{
-        req.flash('error', 'PLEASE LOGIN IN');
+        req.flash('error', 'PLEASE LOGIN');
         res.redirect('back');
     };
 }

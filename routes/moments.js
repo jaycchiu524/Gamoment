@@ -15,13 +15,13 @@ router.get("/", (req, res) => {
         if(err){
             console.log(err);
         }
-        res.render("campgrounds/index", {campgrounds: allCampgrounds, page: 'campgrounds'});
+        res.render("moments/index", {campgrounds: allCampgrounds, page: 'moments'});
     }
     )})
 
 //CREATE campgrounds
 router.get("/new", middleware.isLoggedIn, (req, res) => {
-    res.render("campgrounds/new");
+    res.render("moments/new");
 })
 
 router.post("/", (req, res) => {
@@ -52,7 +52,7 @@ router.post("/", (req, res) => {
         console.log(newlyCreated);
         //redirect to /campgrounds
         req.flash('success', 'Successfully Added A GaMoment');
-        res.redirect("/campgrounds");
+        res.redirect("/moments");
     })
 })
 
@@ -65,26 +65,26 @@ router.get("/:id", (req, res) => {
             console.log(err);
         }
         //render show template with that campground
-        res.render("campgrounds/show", {campground: foundCampground});
+        res.render("moments/show", {campground: foundCampground});
         
     })
 })
 
-// EDIT - /edit campgrounds route
+// EDIT - /edit moments route
 router.get('/:id/edit', middleware.checkCampgroundOwnership, (req, res) => {
     Campground.findById(req.params.id, (err, foundCampground) => {
-        res.render('campgrounds/edit', {campground: foundCampground});
+        res.render('moments/edit', {campground: foundCampground});
     })
 })
 
-// UPDATE - update in /campgrounds
+// UPDATE - update in /moments
 router.put('/:id', middleware.checkCampgroundOwnership, (req, res) => {
     // find and update the correct campground
     Campground.findByIdAndUpdate(req.params.id, req.body.campground, (err, updatedCampground) => {
         if(err){
             console.log(err);
         }
-        res.redirect(`/campgrounds/${req.params.id}`)
+        res.redirect(`/moments/${req.params.id}`)
         console.log(updatedCampground);
         
     })
@@ -107,7 +107,7 @@ router.delete('/:id', middleware.checkCampgroundOwnership, (req, res) => {
                     return res.redirect('/');
                 }
                 req.flash('error', 'Campground deleted!');
-                res.redirect('/campgrounds');
+                res.redirect('/moments');
             })
         }
     })

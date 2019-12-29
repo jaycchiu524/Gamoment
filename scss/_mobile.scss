@@ -1,0 +1,33 @@
+@include mediaXl{
+    
+}
+
+@include mediaLg{
+
+}
+
+@include mediaMd{
+    body header{
+        .header-box{
+            h1 {
+                font-size: 10vw;
+            }
+            p{
+                font-size: 3.5vw;
+            }
+        }
+    }
+}
+
+@include mediaSm{
+    body header{
+        .header-box{
+            h1 {
+                font-size: 10vw;
+            }
+            p{
+                font-size: 3.5vw;
+            }
+        }
+    }
+}

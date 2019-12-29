@@ -44,7 +44,7 @@ router.post("/", (req, res) => {
             campground.save();
             console.log(comment);
             req.flash('error', 'Successfully Added A Comment');
-            res.redirect(`/campgrounds/${campground._id}`);
+            res.redirect(`/moments/${campground._id}`);
                 
         });
     })
@@ -68,7 +68,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, (req, res) => {
         if(err){
             res.redirect('back');
         }
-        res.redirect(`/campgrounds/${req.params.id}`);
+        res.redirect(`/moments/${req.params.id}`);
     })
 })
 
@@ -80,7 +80,7 @@ router.delete('/:comment_id', middleware.checkCommentOwnership, (req, res) => {
             console.log(err);
         }
         req.flash('success', 'Successfully Delete A Comment');
-        res.redirect(`/campgrounds/${req.params.id}`);
+        res.redirect(`/moments/${req.params.id}`);
     
     })
 })

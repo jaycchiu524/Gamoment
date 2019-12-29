@@ -4,7 +4,7 @@
         <h1 style="text-align: center;">Edit Comment</h1>
         <div style="width: 30%; margin: 25px auto">
             <!-- only campground id needed, simply pass req.params.id alone instead of retrieving form database -->
-            <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id%>?_method=PUT" method="POST">
+            <form action="/moments/<%= campground_id %>/comments/<%= comment._id%>?_method=PUT" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" value="<%= comment.text %>"" name="comment[text]">
                 </div>

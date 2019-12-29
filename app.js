@@ -13,7 +13,8 @@ const express    = require('express');
 
 // Requiring ROUTES
 const commentsRoutes = require('./routes/comments');
-const campgroundsRoutes = require('./routes/campgrounds');
+// const campgroundsRoutes = require('./routes/campgrounds');
+const momentsRoutes = require('./routes/moments');
 const indexRoutes = require('./routes/index');
 
 
@@ -53,10 +54,10 @@ app.use((req, res, next) => {
 })
 
 app.use('/', indexRoutes);
-app.use('/campgrounds', campgroundsRoutes);
+app.use('/moments', momentsRoutes);
 // Will make 'req.params.id' = null -> 
 // const router = express.Router({mergeParams: true})
-app.use('/campgrounds/:id/comments/', commentsRoutes);
+app.use('/moments/:id/comments/', commentsRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
