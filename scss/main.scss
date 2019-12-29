@@ -1,5 +1,4 @@
 @import 'config';
-@import 'mobile';
 @import url('https://fonts.googleapis.com/css?family=Monoton|Montserrat&display=swap');
 
 a,
@@ -183,3 +182,5 @@ body {
 .deletebutton, .editbutton{
     display: inline;
 }
+
+@import 'mobile';
