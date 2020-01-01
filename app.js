@@ -10,6 +10,7 @@ const express    = require('express');
       LocalStrategy = require('passport-local');
       medthodOverride = require('method-override');
       flash           = require('connect-flash');
+      dotenv     = require('dotenv').config();
 
 // Requiring ROUTES
 const commentsRoutes = require('./routes/comments');
@@ -20,7 +21,7 @@ const indexRoutes = require('./routes/index');
 
 //useNewUrlParse useUnifiedTopology useFindAndModify for higher than 3.1 version
 // mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-mongoose.connect("mongodb+srv://jaycchiu524:Jj52041314@cluster0-qcjmq.mongodb.net/yelpcamp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect(`mongodb+srv://jaycchiu524:${process.env.DB_PASSWORD}@cluster0-qcjmq.mongodb.net/yelpcamp?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 // add in stylesheet
@@ -61,5 +62,5 @@ app.use('/moments/:id/comments/', commentsRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("GaMoment is listening on PORT 3000");
+    console.log("GaMoment is listening");
 })
