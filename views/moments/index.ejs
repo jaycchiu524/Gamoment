@@ -37,13 +37,14 @@
                 </a>
             </div>
 
-            <% campgrounds.forEach((campground) => {%>
+            <% moments.forEach((moment) => {%>
                 <div class="card">
-                    <a href="/moments/<%= campground._id %>">
-                        <img src="<%= campground.image %>" class="card-img-top img-fluid" alt="...">
+                    <a href="/moments/<%= moment._id %>">
+                        <img src="<%= moment.image %>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><%= campground.name %></h5>
-                            <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                            <h5 class="card-title"><%= moment.postname %></h5>
+                            <h5 class="card-title game"><%= moment.game %></h5>
+                            <p class="card-text"><%= moment.description%></p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </a>
@@ -53,14 +54,14 @@
         </div>
 
         <!-- <div class="row" style="display:flex; flex-wrap: wrap;">
-            <% campgrounds.forEach((campground) => {%>
+            <% moments.forEach((moment) => {%>
                 <div class="col-md-6 col-sm-12">
                     <div class="thumbnail">
-                        <img src="<%= campground.image %>">
+                        <img src="<%= moment.image %>">
                         <div class="caption">
-                            <h4><%= campground.name %></h4>
+                            <h4><%= moment.postname %></h4>
                         </div>
-                        <p><a href="/moments/<%= campground._id %>" class="btn btn-primary">More Info</a></p>
+                        <p><a href="/moments/<%= moment._id %>" class="btn btn-primary">More Info</a></p>
                     </div>                
                 </div> 
             <% }) %>    

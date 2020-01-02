@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
 
 //SCHEMA SETUP - table/properties 
-var campgroundSchema = new mongoose.Schema({
-    name: String,
-    price: String,
+var momentSchema = new mongoose.Schema({
+    postname: String,
+    game: String,
+    genre: String,
+    releaseDate: {
+        type: Date,
+        max: '01/01/2020',
+        min: '01/01/1960'
+    },
     image: String,
     description: String,
     author:{
@@ -22,7 +28,7 @@ var campgroundSchema = new mongoose.Schema({
 })
 
 //app.js - require
-module.exports = mongoose.model("Campground", campgroundSchema);
+module.exports = mongoose.model("Moment", momentSchema);
 
 // create a collection at database named "Campground"
 // let Campground = mongoose.model("Campground", campgroundSchema);

@@ -19,19 +19,19 @@
 
 let middlewareObj = {};
 
-middlewareObj.checkCampgroundOwnership = function(req, res, next){
+middlewareObj.checkMomentOwnership = function(req, res, next){
     if (req.isAuthenticated()){
-        Campground.findById(req.params.id, (err, foundCampground) => {
-            if(err || !foundCampground){
+        Moment.findById(req.params.id, (err, foundMoment) => {
+            if(err || !foundMoment){
                 console.log(err);
                 req.flash('error', 'Moment Not Found');
                 res.redirect('back');
             }
             
-            // foundCampground.author.id -> mongoose object
+            // foundMoment.author.id -> mongoose object
             // req.user._id -> string , cannot use "===" but equal method(from mongoose)
-            else if(foundCampground.author.id.equals(req.user._id)){
-                req.campground = foundCampground;
+            else if(foundMoment.author.id.equals(req.user._id)){
+                req.moment = foundMoment;
                 next();
             }else{
                 req.flash('error', 'You do not have the permission');
@@ -52,7 +52,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
                 req.flash('error', 'Comment Not Found');
                 res.redirect('back');
             }
-            // foundCampground.author.id -> mongoose object
+            // foundMoment.author.id -> mongoose object
             // req.user._id -> string , cannot use "===" but equal method(from mongoose)
             else if(foundComment.author.id.equals(req.user._id)){
                 req.comment = foundComment;

@@ -84,6 +84,8 @@ body {
   body main {
     padding: 35px;
     min-height: 100vh; }
+    body main h1 {
+      text-align: center; }
     body main#showroom .card {
       display: inline-block; }
     body main#showroom .card-img-top {
@@ -91,7 +93,14 @@ body {
       height: 15vw;
       object-fit: cover; }
     body main#showroom .card-title {
-      font-weight: 600; }
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+      body main#showroom .card-title.game {
+        font-style: italic; }
     body main#showroom .card-text {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -107,12 +116,13 @@ body {
       border-top: 1px #e7e7e7 solid;
       padding-top: 10px;
       margin: 10px; }
-    body main#login h1, body main#register h1, body main#new h1 {
-      text-align: center; }
     body main#login .input-form, body main#register .input-form, body main#new .input-form {
       width: 35%;
       margin: 25px auto; }
     body main#login textarea, body main#register textarea, body main#new textarea {
+      align-self: center;
+      height: 200px; }
+    body main#comment-new textarea {
       align-self: center;
       height: 200px; }
 

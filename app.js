@@ -2,7 +2,7 @@ const express    = require('express');
       app        = express();
       bodyParser = require('body-parser');
       mongoose   = require('mongoose');
-      Campground = require('./models/campground');
+      Moment     = require('./models/moment');
       Comment    = require('./models/comment');
       User       = require('./models/user')
       seedDB     = require('./seeds');
@@ -14,14 +14,14 @@ const express    = require('express');
 
 // Requiring ROUTES
 const commentsRoutes = require('./routes/comments');
-// const campgroundsRoutes = require('./routes/campgrounds');
+// const momentsRoutes = require('./routes/moments');
 const momentsRoutes = require('./routes/moments');
 const indexRoutes = require('./routes/index');
 
 
 //useNewUrlParse useUnifiedTopology useFindAndModify for higher than 3.1 version
 // mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-mongoose.connect(`mongodb+srv://jaycchiu524:${process.env.DB_PASSWORD}@cluster0-qcjmq.mongodb.net/yelpcamp?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect(`mongodb+srv://jaycchiu524:${process.env.DB_PASSWORD}@cluster0-qcjmq.mongodb.net/gamoment?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 // add in stylesheet

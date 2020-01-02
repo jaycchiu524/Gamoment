@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-      Campground = require('./models/campground');
+      Campground = require('./models/moment');
       Comment = require('./models/comment')
 
 // let data = [

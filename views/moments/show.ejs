@@ -1,25 +1,25 @@
 <% include ../partials/header %>
     <main id="info-page">
+        <h3><%= moment.postname %></h3>
         <div class="row">
-            <div class="col-md-3">
-                <p class="lead"><%= campground.name %></p>
+            <div class="col-md-3 mt-2">
                 <div class="list-group">
-                    <li class="list-group-item">Game: -----</li>
-                    <li class="list-group-item">Genre: -----</li>
+                    <li class="list-group-item">Game: <%= moment.game %></li>
+                    <li class="list-group-item">Genre: <%= moment.genre %></li>
                     <li class="list-group-item">Release Date: -----</li>
                 </div>
             </div>
             <div class="col-md-9 mt-2">
                 <div>
-                    <img class="img-fluid" src="<%= campground.image %>" alt="<%= campground.name %>">
+                    <img class="img-fluid" src="<%= moment.image %>" alt="<%= moment.postname %>">
                     <div class="caption mt-2">
-                        <!-- <h4 class="pull-right"> <%= campground.price %> </h4> -->
-                        <h3><%= campground.description %></h3>
-                        <h6 class="author"><em>Summitted By</em> <strong><%= campground.author.username%></strong></h6>
+                        <!-- <h4 class="pull-right"> <%= moment.price %> </h4> -->
+                        <h6 class="author"><strong>@<%= moment.author.username%></strong></h6> - <h3><%= moment.description %></h3>
+
                         <!-- current._id -> from app.use... -->
-                        <% if(currentUser && campground.author.id.equals(currentUser._id)){%>
-                            <p class="editbutton"><a class="btn btn-outline-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a></p>
-                            <form class="deletebutton" action="/moments/<%= campground._id %>?_method=DELETE" method="POST">
+                        <% if(currentUser && moment.author.id.equals(currentUser._id)){%>
+                            <p class="editbutton"><a class="btn btn-outline-warning" href="/moments/<%= moment._id %>/edit">Edit</a></p>
+                            <form class="deletebutton" action="/moments/<%= moment._id %>?_method=DELETE" method="POST">
                                 <button class="btn btn-outline-danger">Delete</button>
                             </form>
                         <% } %>
@@ -27,23 +27,23 @@
                 </div>
 
                 <div class="comment">
-                    <% if(currentUser && campground.author.id.equals(currentUser._id)){%>
+                    <% if(currentUser){%>
                     <div class="text-left">
-                        <a class="btn btn-outline-dark" href="/moments/<%= campground._id %>/comments/new">Add New Comment</a>
+                        <a class="btn btn-outline-dark" href="/moments/<%= moment._id %>/comments/new">Add New Comment</a>
                     </div>
                     <% } %>
                     <hr>
-                    <% campground.comments.forEach( (comment) => { %>
+                    <% moment.comments.forEach( (comment) => { %>
                         <div class="row">
                             <div class="col-d-12">
-                                <strong><%= comment.author.username %></strong>
+                                <strong>@<%= comment.author.username %></strong>
                                 <!-- <span class="pull-right">10 days ago</span> -->
                                 <p><%= comment.text %></p>
                                 <% if(currentUser && comment.author.id.equals(currentUser._id)){%>
-                                <p class="editbutton"><a href="/moments/<%= campground._id %>/comments/<%= comment._id %>/edit" class=" btn btn-outline-warning">
+                                <p class="editbutton"><a href="/moments/<%= moment._id %>/comments/<%= comment._id %>/edit" class=" btn btn-outline-warning">
                                     Edit
                                 </a></p>
-                                <form class="deletebutton" action="/moments/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <form class="deletebutton" action="/moments/<%= moment._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                                     <button class="btn btn-outline-danger">Delete</button>
                                 </form>
                                 <% } %>
