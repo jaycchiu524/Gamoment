@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md-3 mt-2">
                 <div class="list-group">
-                    <li class="list-group-item">Game: <%= moment.game %></li>
-                    <li class="list-group-item">Genre: <%= moment.genre %></li>
+                    <li class="list-group-item">Game: <strong><%= moment.game %></strong></li>
+                    <li class="list-group-item">Genre: <strong><%= moment.genre %></strong></li>
                     <li class="list-group-item">Release Date: -----</li>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="comment">
                     <% if(currentUser){%>
                     <div class="text-left">
-                        <a class="btn btn-outline-dark" href="/moments/<%= moment._id %>/comments/new">Add New Comment</a>
+                        <a class="btn btn-outline-dark" href="/moments/<%= moment._id %>/comments/new">Comment</a>
                     </div>
                     <% } %>
                     <hr>

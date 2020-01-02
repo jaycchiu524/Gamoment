@@ -86,6 +86,15 @@ body {
     min-height: 100vh; }
     body main h1 {
       text-align: center; }
+    body main#showroom .sr-title {
+      display: inline-block; }
+    body main#showroom h2 {
+      margin: 10px;
+      letter-spacing: 3px; }
+    body main#showroom #new-post {
+      margin: 10px 0; }
+      body main#showroom #new-post .btn {
+        padding: 5px; }
     body main#showroom .card {
       display: inline-block; }
     body main#showroom .card-img-top {

@@ -123,6 +123,25 @@ body {
 
         &#showroom {
 
+            .sr-title{
+                display: inline-block;
+            }
+
+            h2{
+                margin: 10px;
+                letter-spacing: 3px;
+            }
+
+            #new-post{
+                margin: 10px 0;
+                .btn{
+                    padding: 5px;
+                }
+            }
+
+            
+
+
             .card{
                 display: inline-block;
             }

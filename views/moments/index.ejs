@@ -1,6 +1,5 @@
 <% include ../partials/header %>
 
-
     <header>
         <div class="header-box">
             <h1>GaMoment</h1>
@@ -17,26 +16,15 @@
 
     <main id="showroom">
         <div class="d-flex justify-content-between">
-            <h3>Best Moments</h3>
+            <h2>Best Moments</h2>
             <% if(currentUser){%>
-            <div class="p-1 bd-highlight">
-                <a class="btn btn-sm btn-info" href="/moments/new">Add New Moment</a>
+            <div id="new-post">
+                <a class="btn btn-outline-primary" href="/moments/new">New Moment</a>
             </div>
             <% } %>
         </div>
 
         <div class="card-columns">
-            <div class="card">
-                <a href="#">
-                    <img src="/images/slide-6.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Sekiro: GOTY</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quae soluta repellat? Vel incidunt minima maiores eius. Repellat, animi corporis. Dolores cumque fugiat inventore a minus error similique maxime nemo nam distinctio, voluptatum tempore neque voluptatibus assumenda beatae ratione libero nihil dolorem unde quas amet voluptate culpa recusandae. Suscipit, sunt?</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </a>
-            </div>
-
             <% moments.forEach((moment) => {%>
                 <div class="card">
                     <a href="/moments/<%= moment._id %>">
